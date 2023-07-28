@@ -1,0 +1,6 @@
+{
+	"devDependencies": {
+		"@auth/core": "^0.10.0",
+		"@auth/sveltekit": "^0.3.6"
+	}
+}
