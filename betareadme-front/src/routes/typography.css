@@ -1,0 +1,16 @@
+:root {
+  --elevation-container: #f7fafd;
+  --elevation-low: #f0f7fe;
+  --elevation-medium: #c0defe;
+  --px10: 10px;
+  --px20: 20px;
+  --px32: 32px;
+}
+
+h1, p, a, button, dt, dd {
+  font-family: Roboto, "Segoe UI", -apple-system, BlinkMacSystemFont, Oxygen-Sans, Ubuntu, Cantarell, "Helvetica Neue", sans-serif;
+}
+
+h1 {
+  font-size: larger;
+}

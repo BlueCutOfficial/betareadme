@@ -11,7 +11,6 @@
     border-style: none;
     color: #eeeeee;
     filter: drop-shadow(2px 2px 3px rgba(0,0,0,0.2));
-    font-family: 'Times New Roman', Times, serif;
     font-size: medium;
     padding: 8px;
     text-decoration: none;

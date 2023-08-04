@@ -1,5 +1,6 @@
 <script>
 	import { page } from '$app/stores';
+	import './typography.css';
 </script>
 
 {#if $page.data.session}
@@ -7,19 +8,37 @@
 		<a href="/">Home</a>
 		<a href="/profile/academiedesrenards">Profile</a>
 		<a href="/books">Books</a>
-		<a href="/auth/signout" class="sign-button" data-sveltekit-preload-data="off">
+		<a href="/auth/signout" class="sign-button out" data-sveltekit-preload-data="off">
 			Sign out
 		</a>
 	</nav>
 
-	<slot />
+	<div class="main-content">
+		<slot />
+	</div>
 {:else}
-	<a href="/auth/signin" class="sign-button" data-sveltekit-preload-data="off">
-		Sign in
-	</a>
+	<div class="main-content">
+		<a href="/auth/signin" class="sign-button in" data-sveltekit-preload-data="off">
+			Sign in
+		</a>
+	</div>
 {/if}
 
 <style>
+	:global(body) {
+		margin: 0;
+		background-color: var(--elevation-container);
+	}
+	nav {
+		background-color: var(--elevation-medium);
+		padding: var(--px10);
+		min-height: 38px;
+	}
+
+	.main-content {
+		padding: var(--px32);
+	}
+
   .sign-button {
     background-color: #009fff;
     border-radius: 4px;
@@ -37,4 +56,8 @@
     box-shadow: inset 3px 3px 4px rgba(0,0,0,0.1);
     filter: none;
   }
+
+	.sign-button.out {
+		float: right;
+	}
 </style>
