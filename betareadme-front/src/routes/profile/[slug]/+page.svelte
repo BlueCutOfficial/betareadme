@@ -3,6 +3,7 @@
   export let data;
 </script>
 
+<h1>Your profile</h1>
 <dl>
   <dt>Name</dt>
   <dd>{data.user.displayname}</dd>
