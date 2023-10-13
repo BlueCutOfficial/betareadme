@@ -8,7 +8,7 @@
 		<a href="/">Home</a>
 		<a href="/profile/academiedesrenards">Profile</a>
 		<a href="/books">Books</a>
-		<a href="/auth/signout" class="sign-button out" data-sveltekit-preload-data="off">
+		<a data-testid="link-sign-out" href="/auth/signout" class="sign-button out" data-sveltekit-preload-data="off">
 			Sign out
 		</a>
 	</nav>
@@ -18,7 +18,7 @@
 	</div>
 {:else}
 	<div class="main-content">
-		<a href="/auth/signin" class="sign-button in" data-sveltekit-preload-data="off">
+		<a data-testid="link-sign-in" href="/auth/signin" class="sign-button in" data-sveltekit-preload-data="off">
 			Sign in
 		</a>
 	</div>
