@@ -1,6 +1,6 @@
 /*
  * This file can be used to generate the content of playwright/.auth/user.json
- * 1. Revert the comments of the setup functions below to run the one that connect to GitHub
+ * 1. Uncomment the setup function below to connect to GitHub
  * 2. Fill up "Username or email address"
  * 3. Fill up "Password"
  * 4. Fill up XXXXXX with the current MFA code
@@ -8,19 +8,13 @@
  * 6. In another terminal, launch "pnpm test:integration"
  * => playwright/.auth/user.json should now be up to date
  * 7. Revert comments again
+ * 
+ * Note: if you can't do it because MFA invalidate to fast, 
+ * you can try something with "await page.pause()" and see if you can 
+ * login manually in the test UI by running "pnpm test-ui".
  */
 
-import { test as setup } from '@playwright/test';
-
-// --- Reuse current storage state ---
-
-setup('authenticate', async ({ page }) => {
-  await page.goto('http://localhost:5173/');
-	await page.getByTestId('link-sign-in').click();
-	// For some reason the first request to Github fails so we need to click twice
-  await page.getByRole('button', { name: 'Sign in with GitHub' }).click();
-	await page.getByRole('button', { name: 'Sign in with GitHub' }).click();
-});
+// import { test as setup } from '@playwright/test';
 
 // --- Create a new storage state ---
 
